@@ -1,3 +1,8 @@
 body {
-    background-color: lightblue;
-  }
+  background-color: blue;
+}
+
+img {
+  width: 90vw;
+  height: 60vh
+}

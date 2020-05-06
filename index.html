@@ -5,12 +5,17 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
 
-  <body>
+  <body onload = getfirstBird()>
+    <h1 id = "commonName">Bird Name</h1>
     <div id = 'bird_img'></div>
       <button id = 'prev'> < </button>
-      <img src = 'resources/images/blank.png' alt = 'bird image'>
+      <img id = 'bird_image' src = 'resources/images/blank.png' alt = 'bird image'>
       <button id = 'next'> > </button>
     </div>
-    
+    <div id = "bird_info">
+      
+
+    </div>
+    <script src='client.js'></script>
   </body>
 </html>

@@ -16,8 +16,14 @@ server.listen(port, hostname, () => {
 var express = require('express')
 var app = express()
 
+var birds = require('./birds.json')
+
 app.get('/', function(req, resp){
    resp.send('Bird Database')
+})
+
+app.get('/birds:id', function(req, resp){ 
+        resp.send(birds[req.params.id])
 })
 
 app.get('*', function(req, res){

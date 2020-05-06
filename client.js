@@ -10,4 +10,11 @@ function LoadBird(BirdJson){
     h.innerText = BirdJson['common_name'];
     let i = document.getElementById('bird_image');
     i.src = BirdJson['bird_image'];
+    info_div = document.getElementById('bird_info');
+    for (var key in BirdJson){
+        if (key != 'common_name' && key != 'bird_image'){
+            info_div.innerHtml += "<p class = 'b_inf'>" + key + " : " + BirdJson[key];
+        }
+
+    }
 }

@@ -3,16 +3,24 @@ body {
 }
 
 #bird_img{
+  list-style: none;
+  width: 100%;
+  height: 90px;
+  margin: 0;
+  padding: 0;
   white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-img {
+#bird_img > img {
   width: 90vw;
   height: 40vh;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-button{
+
+#bird_img > button{
   height: 40vh;
 }

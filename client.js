@@ -30,7 +30,10 @@ function LoadBird(BirdJson){
     let i = document.getElementById('bird_image');
     i.src = BirdJson['bird_image'];
     info_div = document.getElementById('bird_info');
-    info_div.innerHtml = '';
+    while(info_div.firstChild){
+        info_div.removeChild(info_div.firstChild);
+    }
+
     for (var key in BirdJson){
         if (key != 'common_name' && key != 'bird_image' && key != 'id'){
             var info = document.createElement("p");

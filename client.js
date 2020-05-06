@@ -1,6 +1,6 @@
-function getFirstBird(){
-    let response = fetch('http://127.0.0.1:8080/birds/0');
-    let body = response.text();
+async function getFirstBird(){
+    let response = await fetch('http://127.0.0.1:8080/birds/0');
+    let body = await response.text();
     let results = JSON.parse(body);
     LoadBird(results);
 }

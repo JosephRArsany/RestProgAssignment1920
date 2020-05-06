@@ -1,4 +1,3 @@
-
 function getFirstBird(){
     let response = fetch('http://127.0.0.1:8080/birds/0');
     let body = response.text();

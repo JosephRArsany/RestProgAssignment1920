@@ -38,8 +38,8 @@ function getBirdFromForm(){
     let bird = {};
     bird['common_name'] = commonName;
     bird['bird_image'] = imgUrl;
-
-    for (var i in extra.split("\n")){
+    let attr = extra.split("\n")
+    for (var i in attr){
         keyval = i.split(':');
         bird[keyval[0]] = keyval[1];
     }

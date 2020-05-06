@@ -24,6 +24,7 @@ app.get('/', function(req, resp){
 })
 
 app.get('/birds/:id', function(req, resp){ 
+        resp.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
         resp.send(birds[req.params.id])
 })
 

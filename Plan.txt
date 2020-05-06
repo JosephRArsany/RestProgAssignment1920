@@ -1,0 +1,12 @@
+1) bird website
+2) picture of bird with arrows to move back and forth
+3) info on birds:
+	common name
+	scientific name
+	image
+	description
+	additional info
+4) form for adding new birds
+5) bird id created automatically
+6) image must be supplied
+7) select birds with scientific names according to regex

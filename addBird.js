@@ -1,5 +1,7 @@
 async function postNewBird(){
+    console.log(1);
     const Bird = getBirdFromForm();
+    console.log(2);
     if (Bird === -1){
         return -1;
     }
@@ -41,6 +43,6 @@ function getBirdFromForm(){
         keyval = i.split(':');
         bird[keyval[0]] = keyval[1];
     }
-
+    console.log(bird);
     return bird;
 }

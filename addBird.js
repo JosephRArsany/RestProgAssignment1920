@@ -10,6 +10,7 @@ async function postNewBird(){
                                        headers: {
                                            'Content-Type': 'application/json'
                                        },
+                                       mode: no-cors,
                                    });
 }
 

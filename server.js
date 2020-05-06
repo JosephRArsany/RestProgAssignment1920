@@ -17,7 +17,12 @@ var express = require('express')
 var app = express()
 
 app.get('/', function(req, resp){
-   resp.send('Hello world')
+   resp.send('Bird Database')
+})
+
+app.get('*', function(req, res){
+        res.statusCode = 404;
+        res.send("Error: Not found")
 })
 
 app.listen(8080, () => {console.log("Server running at https://127.0.0.1:8080");})

@@ -41,9 +41,9 @@ app.get('/birds/:id', function(req, resp){
 
 app.post('/addbird', function (req, resp){
         const Bird = req.body;
-
-
-
+        birds.push(Bird); 
+        const json = JSON.stringify(birds);
+        fs.writeFile('birds.json', json, 'utf8', console.log);
 })
 
 app.get('*', function(req, res){

@@ -8,6 +8,7 @@
     }
     
     </style>
+    <link rel="stylesheet" type="text/css" href="css/FormStyle.css">
   </head>
 
   <script src='addBird.js'></script>
@@ -23,7 +24,11 @@
             <label>ImageUrl</label>
             <input id='new_imgurl' name='url' type='text'></input>
         </div>
+        <div>
+            <label> Enter extra info here seperated in new lines</label>
+            <textarea id = 'extra_info'>e.g. Scientific name:Passer ammodendri</textarea>
+        </div>
     </form>
-    <button id = 'Submit'>Submit</button><p id = 'errormsg'></p>
+    <button id = 'Submit' onclick=postNewBird()>Submit</button><p id = 'errormsg'></p>
   </body>
 </html>

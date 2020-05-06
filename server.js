@@ -40,6 +40,7 @@ app.get('/birds/:id', function(req, resp){
 });
 
 app.post('/addbird', function (req, resp){
+        resp.setHeader('Access-Control-Allow-Origin', 'https://josephrarsany.github.io');
         const Bird = req.body;
         birds.push(Bird); 
         const json = JSON.stringify(birds);

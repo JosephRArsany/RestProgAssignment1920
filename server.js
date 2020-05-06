@@ -23,9 +23,33 @@ app.get('/', function(req, resp){
    resp.send('Bird Database')
 })
 
+app.get('/birds/:id/prev', function(req, resp){ 
+        resp.setHeader('Access-Control-Allow-Origin', 'https://josephrarsany.github.io');
+        if (req.params.id > 0){        
+                let id = (req.params.id - 1) % birds.length ;
+        }
+        else{
+                let id = birds.length - 1;
+        }
+        let response = birds[id];
+        response["id"] = id;
+        resp.send(response);
+})
+
+app.get('/birds/:id/next', function(req, resp){ 
+        resp.setHeader('Access-Control-Allow-Origin', 'https://josephrarsany.github.io');
+        let id = (req.params.id + 1) % birds.length;
+        let response = birds[id];
+        response["id"] = id;
+        resp.send(response);
+})
+
 app.get('/birds/:id', function(req, resp){ 
         resp.setHeader('Access-Control-Allow-Origin', 'https://josephrarsany.github.io');
-        resp.send(birds[req.params.id])
+        let id = req.params.id;
+        let response = birds[id];
+        response["id"] = id;
+        resp.send(response);
 })
 
 app.get('*', function(req, res){

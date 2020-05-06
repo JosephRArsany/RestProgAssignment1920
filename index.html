@@ -8,12 +8,12 @@
   <body onload = getFirstBird()>
     <h1 id = "commonName">Bird Name</h1>
     <div id = 'bird_img'></div>
-      <button id = 'prev'> < </button>
+      <button id = 'prev' onclick=getPrevBird()> < </button>
       <img id = 'bird_image' src = 'resources/images/blank.png' alt = 'bird image'>
-      <button id = 'next'> > </button>
+      <button id = 'next' onclick=getNextBird()> > </button>
     </div>
     <div id = "bird_info">
-      
+
     </div>
     <a href="BirdForm.html"><button id = 'addBird'>Add bird to database</button></a>
   </body>

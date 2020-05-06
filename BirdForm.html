@@ -2,13 +2,28 @@
 <html>
   <head>
     <title>Submit Bird</title>
-    <style>body{background-color: #62D2FF;};</style>
+    <style>body{background-color: #62D2FF;};
+    #errormsg{
+        color: red;
+    }
+    
+    </style>
   </head>
+
+  <script src='addBird.js'></script>
   <body>
     <a href="index.html"><button id = 'Return'>back</button></a>
-    <form>
-
+    <form id = 'new_bird_info'>
+        <h2>Add a new bird</h2>
+        <div>
+            <label>Common Name</label>
+            <input id='new_cn' name='Common Name' type='text'></input>
+        </div>
+        <div>
+            <label>ImageUrl</label>
+            <input id='new_imgurl' name='url' type='text'></input>
+        </div>
     </form>
-    <button id = 'Submit'>Submit</button>
+    <button id = 'Submit'>Submit</button><p id = 'errormsg'></p>
   </body>
 </html>

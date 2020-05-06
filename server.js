@@ -1,3 +1,4 @@
+var fs = require('fs');
 var express = require('express');
 var app = express();
 
@@ -37,6 +38,13 @@ app.get('/birds/:id', function(req, resp){
         response["id"] = id;
         resp.send(response);
 });
+
+app.post('/addbird', function (req, resp){
+        const Bird = req.body;
+
+
+
+})
 
 app.get('*', function(req, res){
         res.statusCode = 404;

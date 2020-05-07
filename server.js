@@ -1,19 +1,28 @@
 var fs = require('fs');
 var express = require('express');
+var cors = require('cors');
 var app = express();
+
+var corsOptions = {
+        origin: '*',
+        optionsSuccessStatus: 200
+      }
 
 var birds = require('./birds.json');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors(corsOptions));
 
 app.get('/', function(req, resp){
    resp.send('Bird Database');
 });
 
+app.options('/addbird', cors(corsOptions))
+
 app.get('/birds/:id/prev', function(req, resp){ 
-        resp.setHeader('Access-Control-Allow-Origin', 'https://josephrarsany.github.io');
+        resp.setHeader('Access-Control-Allow-Origin', '*');
         let id = 0
         if (req.params.id > 0){        
                 id = (req.params.id - 1) % birds.length ;
@@ -27,7 +36,7 @@ app.get('/birds/:id/prev', function(req, resp){
 });
 
 app.get('/birds/:id/next', function(req, resp){ 
-        resp.setHeader('Access-Control-Allow-Origin', 'https://josephrarsany.github.io');
+        resp.setHeader('Access-Control-Allow-Origin', '*');
         let id = (req.params.id + 1) % birds.length;
         let response = birds[id];
         response["id"] = id;
@@ -35,15 +44,15 @@ app.get('/birds/:id/next', function(req, resp){
 });
 
 app.get('/birds/:id', function(req, resp){ 
-        resp.setHeader('Access-Control-Allow-Origin', 'https://josephrarsany.github.io');
+        resp.setHeader('Access-Control-Allow-Origin', '*');
         let id = req.params.id;
         let response = birds[id];
         response["id"] = id;
         resp.send(response);
 });
 
-app.post('/addbird', function (req, resp){
-        resp.setHeader('Access-Control-Allow-Origin', 'https://josephrarsany.github.io');
+app.post('/addbird', cors(corsOptions), function (req, resp){
+        resp.setHeader('Access-Control-Allow-Origin', '*');
         const Bird = req.body;
         console.log(Bird);
         birds.push(Bird); 

@@ -6,7 +6,7 @@ async function postNewBird(){
     let response = await fetch('http://127.0.0.1:8080/addbird',
                                    {
                                        method: 'POST',
-                                       body: Bird,
+                                       body: JSON.stringify(Bird),
                                        headers: {
                                            'Content-Type': 'application/x-www-form-urlencoded'
                                        }

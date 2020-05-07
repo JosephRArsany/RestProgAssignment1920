@@ -9,8 +9,7 @@ async function postNewBird(){
                                        body: "test",
                                        headers: {
                                            'Content-Type': 'application/json'
-                                       },
-                                       mode: 'no-cors',
+                                       }
                                    });
 }
 

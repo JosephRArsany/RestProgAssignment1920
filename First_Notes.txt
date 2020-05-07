@@ -1,6 +1,0 @@
-1) some kind of bird classification database
-2) look up requirement
-3) FOCUS ON:
-          - Exception handling/robust programming
-          - Collections of data in the form of JSON; birds{name: "finch", img: "img_229", genus.... etc
-          - Documentation

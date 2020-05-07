@@ -8,7 +8,7 @@ async function postNewBird(){
                                        method: 'POST',
                                        body: "test",
                                        headers: {
-                                           'Content-Type': 'text/plain'
+                                           'Content-Type': 'application/x-www-form-urlencoded'
                                        }
                                    });
 }

@@ -39,6 +39,7 @@ function getBirdFromForm(){
     let attr = extra.split("\n")
     for (var i in attr){
         keyval = i.split(':');
+        console.log(keyval);
         bird[keyval[0]] = keyval[1];
     }
     console.log(bird);

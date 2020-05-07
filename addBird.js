@@ -32,6 +32,7 @@ function getBirdFromForm(){
     pError.innerText = '';
 
     const extra = document.getElementById('extra_info').value;
+    console.log(extra);
     let bird = {};
     bird['common_name'] = commonName;
     bird['bird_image'] = imgUrl;

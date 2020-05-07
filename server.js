@@ -59,7 +59,7 @@ app.post('/addbird', function (req, resp){
 
 app.delete('/removebird/:id', function(req, resp){
         let id = parseInt(req.params.id);
-        delete bird[id];
+        birds.splice(id, 1);
         const json = JSON.stringify(birds);
         fs.writeFile('birds.json', json, 'utf8', console.log);
 })

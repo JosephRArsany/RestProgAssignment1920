@@ -1,7 +1,5 @@
 async function postNewBird(){
-    console.log(1);
     const Bird = getBirdFromForm();
-    console.log(2);
     if (Bird === -1){
         return -1;
     }

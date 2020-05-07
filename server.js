@@ -22,7 +22,6 @@ app.get('/', function(req, resp){
 app.options('/addbird', cors(corsOptions))
 
 app.get('/birds/:id/prev', function(req, resp){ 
-        resp.setHeader('Access-Control-Allow-Origin', '*');
         let id = 0
         if (req.params.id > 0){        
                 id = (req.params.id - 1) % birds.length ;
@@ -36,23 +35,21 @@ app.get('/birds/:id/prev', function(req, resp){
 });
 
 app.get('/birds/:id/next', function(req, resp){ 
-        resp.setHeader('Access-Control-Allow-Origin', '*');
-        let id = (req.params.id + 1) % birds.length;
+        let id = parseInt(req.params.id) + 1;
+        if (id == birds.length){ id = 0;}
         let response = birds[id];
         response["id"] = id;
         resp.send(response);
 });
 
 app.get('/birds/:id', function(req, resp){ 
-        resp.setHeader('Access-Control-Allow-Origin', '*');
         let id = req.params.id;
         let response = birds[id];
         response["id"] = id;
         resp.send(response);
 });
 
-app.post('/addbird', cors(corsOptions), function (req, resp){
-        resp.setHeader('Access-Control-Allow-Origin', '*');
+app.post('/addbird', function (req, resp){
         const Bird = JSON.parse(Object.keys(req.body)[0]);
         console.log(Bird);
         birds.push(Bird); 

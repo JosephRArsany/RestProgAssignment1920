@@ -53,7 +53,7 @@ app.get('/birds/:id', function(req, resp){
 
 app.post('/addbird', cors(corsOptions), function (req, resp){
         resp.setHeader('Access-Control-Allow-Origin', '*');
-        const Bird = req.body;
+        const Bird = JSON.parse(Object.keys(req.body)[0]);
         console.log(Bird);
         birds.push(Bird); 
         const json = JSON.stringify(birds);

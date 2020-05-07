@@ -57,6 +57,13 @@ app.post('/addbird', function (req, resp){
         fs.writeFile('birds.json', json, 'utf8', console.log);
 })
 
+app.delete('/removebird/:id', function(req, resp){
+        let id = parseInt(req.params.id);
+        delete bird[id];
+        const json = JSON.stringify(birds);
+        fs.writeFile('birds.json', json, 'utf8', console.log);
+})
+
 app.get('*', function(req, res){
         res.statusCode = 404;
         res.send("Error: Not found")

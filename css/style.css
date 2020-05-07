@@ -35,3 +35,7 @@ img {
   text-align: center;
 
 }
+
+#addBird, #removeBird {
+  display: inline-block;
+}

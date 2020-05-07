@@ -32,16 +32,12 @@ function getBirdFromForm(){
     pError.innerText = '';
 
     const extra = document.getElementById('extra_info').value;
-    console.log(extra);
     let bird = {};
     bird['common_name'] = commonName;
     bird['bird_image'] = imgUrl;
     let attr = extra.split("\n")
-    console.log(attr);
     for (var i in attr){
-        console.log(i);
-        keyval = i.split(':');
-        console.log(keyval);
+        keyval = attr[i].split(':');
         bird[keyval[0]] = keyval[1];
     }
     console.log(bird);
